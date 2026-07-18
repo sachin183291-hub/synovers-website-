@@ -38,8 +38,8 @@ export default function Navbar() {
         <div className="container">
           <div className="topbar-inner">
             <div className="topbar-left">
-              <a href="tel:+917358096768" className="topbar-link">
-                <Phone size={13} /> +91 73580 96768
+              <a href="tel:+919344626768" className="topbar-link">
+                <Phone size={13} /> +91 93446 26768
               </a>
               <a href="tel:+919994915435" className="topbar-link">
                 <Phone size={13} /> +91 99949 15435

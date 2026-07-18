@@ -10,8 +10,8 @@ const CONTACT_INFO = [
   {
     icon: <Phone size={22} />,
     title: 'Call Us',
-    lines: ['+91 7358096768', '+91 9994915435'],
-    action: 'tel:+917358096768',
+    lines: ['+91 9344626768', '+91 9994915435'],
+    action: 'tel:+919344626768',
     color: 'var(--color-primary)',
   },
   {
@@ -172,7 +172,7 @@ export default function ContactPage() {
                         name="phone"
                         value={form.phone}
                         onChange={handleChange}
-                        placeholder="+91 7358096768"
+                        placeholder="+91 9344626768"
                         className={`input-field ${errors.phone ? 'input-error' : ''}`}
                         required
                       />
@@ -231,7 +231,7 @@ export default function ContactPage() {
                 </div>
                 <p>Get instant answers to your queries on WhatsApp — available 24/7</p>
                 <a
-                  href="https://wa.me/917358096768"
+                  href="https://wa.me/919344626768"
                   target="_blank"
                   rel="noreferrer"
                   className="btn"

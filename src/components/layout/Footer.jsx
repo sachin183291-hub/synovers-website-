@@ -138,8 +138,8 @@ export default function Footer() {
             <div className="footer-col">
               <h4 className="footer-col-title">Get In Touch</h4>
               <div className="footer-contact-items">
-                <a href="tel:+917358096768" className="footer-contact-item">
-                  <Phone size={15} /> +91 73580 96768
+                <a href="tel:+919344626768" className="footer-contact-item">
+                  <Phone size={15} /> +91 93446 26768
                 </a>
                 <a href="tel:+919994915435" className="footer-contact-item">
                   <Phone size={15} /> +91 99949 15435
@@ -156,7 +156,7 @@ export default function Footer() {
                 <p>Mon – Sat: 9:00 AM – 7:00 PM</p>
                 <p>Sunday: 10:00 AM – 4:00 PM</p>
               </div>
-              <a href="https://wa.me/917358096768" className="btn btn-secondary btn-sm footer-whatsapp">
+              <a href="https://wa.me/919344626768" className="btn btn-secondary btn-sm footer-whatsapp">
                 💬 Chat on WhatsApp
               </a>
             </div>

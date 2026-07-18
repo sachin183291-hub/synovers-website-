@@ -538,8 +538,8 @@ function FinalCTASection() {
             <Link to="/courses" className="btn btn-primary btn-lg">
               Explore Courses <ArrowRight size={18} />
             </Link>
-            <a href="tel:+917358096768" className="btn btn-ghost btn-lg">
-              📞 +91 73580 96768
+            <a href="tel:+919344626768" className="btn btn-ghost btn-lg">
+              📞 +91 93446 26768
             </a>
             <a href="tel:+919994915435" className="btn btn-ghost btn-lg">
               📞 +91 99949 15435
@@ -547,7 +547,7 @@ function FinalCTASection() {
           </div>
           <div className="final-cta-actions" style={{ marginTop: '12px' }}>
             <a
-              href="https://wa.me/917358096768?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Synovers%20Technologies%20courses"
+              href="https://wa.me/919344626768?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Synovers%20Technologies%20courses"
               target="_blank" rel="noopener noreferrer"
               className="btn btn-ghost btn-lg"
               style={{ color: '#25D366', borderColor: '#25D366' }}
@@ -579,7 +579,7 @@ export default function HomePage() {
         🔥 <strong>New Batch Starting</strong> — AI + Python Fullstack. Limited seats available! &nbsp;
         <Link to="/contact" style={{ color: '#FFD700', fontWeight: 700 }}>Enroll Now →</Link>
         &nbsp;|&nbsp;
-        <a href="https://wa.me/917358096768?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20AI%20%2B%20Python%20Fullstack%20batch" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 700 }}>💬 WhatsApp Us</a>
+        <a href="https://wa.me/919344626768?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20AI%20%2B%20Python%20Fullstack%20batch" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 700 }}>💬 WhatsApp Us</a>
       </div>
       <Navbar />
       <main>
