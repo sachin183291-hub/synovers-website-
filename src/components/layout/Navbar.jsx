@@ -49,7 +49,7 @@ export default function Navbar() {
               </a>
             </div>
             <div className="topbar-right">
-              <span className="topbar-badge">🔥 New Batch Starting Aug 5 — AI + Python Fullstack</span>
+              <span className="topbar-badge">🔥 New Batch Starting — AI + Python Fullstack</span>
               <Link to="/contact" className="topbar-link">Register Now →</Link>
             </div>
           </div>
