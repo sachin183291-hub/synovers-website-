@@ -64,6 +64,15 @@ export default function CourseDetailPage() {
   }
 
   const discount = Math.round((1 - course.price / course.originalPrice) * 100)
+  // Normalize delivery/mode info
+  const hasRecorded = String(course.mode || '').toLowerCase().includes('record')
+  let deliveryLabel = 'Online'
+  const modeLower = String(course.mode || '').toLowerCase()
+  if (modeLower.includes('lab')) deliveryLabel = 'Online + Lab'
+  else if (modeLower.includes('record') && modeLower.includes('live')) deliveryLabel = 'Live (with recordings)'
+  else if (modeLower.includes('live')) deliveryLabel = 'Live'
+  else if (modeLower.includes('offline')) deliveryLabel = 'Offline'
+  else if (modeLower.trim() !== '') deliveryLabel = course.mode
   const toggleModule = (i) => setOpenModules(prev =>
     prev.includes(i) ? prev.filter(x => x !== i) : [...prev, i]
   )
@@ -106,7 +115,13 @@ export default function CourseDetailPage() {
                 <span className="cd-meta-item"><Users size={14} /> {course.students.toLocaleString()} students</span>
                 <span className="cd-meta-item"><Clock size={14} /> {course.duration}</span>
                 <span className="cd-meta-item"><BookOpen size={14} /> {course.hours} hours</span>
-                <span className="cd-meta-item"><Globe size={14} /> {course.mode}</span>
+                <span className="cd-meta-item"><Globe size={14} /> {deliveryLabel}</span>
+              </div>
+              <div className="cd-delivery-row">
+                <span className="badge badge-secondary">{deliveryLabel}</span>
+                {hasRecorded && (
+                  <span className="badge badge-success" style={{ marginLeft: 8 }}>Recording available</span>
+                )}
               </div>
 
               {/* Instructor */}
