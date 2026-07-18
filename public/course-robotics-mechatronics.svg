@@ -1,0 +1,13 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" rx="40" fill="#0F172A"/>
+  <rect x="260" y="200" width="280" height="220" rx="28" fill="#1E293B" stroke="#FB923C" stroke-width="12"/>
+  <circle cx="360" cy="290" r="26" fill="#FCD34D"/>
+  <circle cx="440" cy="290" r="26" fill="#FCD34D"/>
+  <rect x="360" y="340" width="80" height="60" rx="20" fill="#F97316"/>
+  <path d="M310 240c10-24 24-36 44-36h92c20 0 34 12 44 36" stroke="#F97316" stroke-width="16" fill="none"/>
+  <path d="M260 290h-40" stroke="#FB923C" stroke-width="18" stroke-linecap="round"/>
+  <path d="M540 290h40" stroke="#FB923C" stroke-width="18" stroke-linecap="round"/>
+  <line x1="260" y1="340" x2="220" y2="380" stroke="#FB923C" stroke-width="16" stroke-linecap="round"/>
+  <line x1="540" y1="340" x2="580" y2="380" stroke="#FB923C" stroke-width="16" stroke-linecap="round"/>
+  <text x="400" y="520" text-anchor="middle" font-family="Inter, sans-serif" font-size="52" fill="#FDF2F8" font-weight="700">Robotics</text>
+</svg>

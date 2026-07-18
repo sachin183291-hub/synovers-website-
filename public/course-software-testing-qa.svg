@@ -1,0 +1,81 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#020617" />
+            <stop offset="100%" stop-color="#0F172A" />
+        </linearGradient>
+        <linearGradient id="pulse" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#34D399" />
+            <stop offset="100%" stop-color="#22C55E" />
+        </linearGradient>
+        <linearGradient id="buttonGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#38BDF8" />
+            <stop offset="100%" stop-color="#0EA5E9" />
+        </linearGradient>
+        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="30" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+
+    <rect width="800" height="450" rx="40" fill="url(#bg)" />
+    <circle cx="720" cy="80" r="100" fill="#14B8A6" opacity="0.12" filter="url(#glow)" />
+    <circle cx="120" cy="120" r="90" fill="#2563EB" opacity="0.16" />
+    <circle cx="680" cy="380" r="80" fill="#3B82F6" opacity="0.12" />
+
+    <g opacity="0.18">
+        <rect x="60" y="300" width="640" height="80" rx="40" fill="#ffffff" />
+        <rect x="100" y="330" width="140" height="14" rx="7" fill="#0F172A" />
+        <rect x="260" y="330" width="220" height="14" rx="7" fill="#0F172A" />
+        <rect x="520" y="330" width="120" height="14" rx="7" fill="#0F172A" />
+    </g>
+
+    <rect x="90" y="60" width="520" height="320" rx="36" fill="#112D4E" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" />
+    <rect x="110" y="86" width="180" height="28" rx="14" fill="#22C55E" opacity="0.18" />
+    <text x="128" y="106" fill="#E2E8F0" font-family="Inter, sans-serif" font-size="14" font-weight="700">SOFTWARE QA PRO</text>
+    <text x="110" y="150" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="46" font-weight="800">Quality Engineering</text>
+    <text x="110" y="190" fill="#94A3B8" font-family="Inter, sans-serif" font-size="18" letter-spacing="0.01em">Selenium, Cypress, JMeter and API automation for real-world apps.</text>
+
+    <g transform="translate(110, 220)">
+        <rect x="0" y="0" width="150" height="110" rx="24" fill="#020617" stroke="#334155" stroke-width="1" />
+        <circle cx="34" cy="34" r="24" fill="#34D399" />
+        <path d="M24 36 L32 44 L52 24" stroke="#020617" stroke-width="4" stroke-linecap="round" fill="none" />
+        <text x="0" y="90" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Automation</text>
+    </g>
+
+    <g transform="translate(290, 220)">
+        <rect x="0" y="0" width="150" height="110" rx="24" fill="#020617" stroke="#334155" stroke-width="1" />
+        <rect x="22" y="22" width="106" height="18" rx="9" fill="#38BDF8" />
+        <rect x="22" y="52" width="78" height="12" rx="6" fill="#94A3B8" />
+        <rect x="22" y="74" width="98" height="12" rx="6" fill="#94A3B8" />
+        <text x="0" y="90" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Test Plans</text>
+    </g>
+
+    <g transform="translate(470, 220)">
+        <rect x="0" y="0" width="150" height="110" rx="24" fill="#020617" stroke="#334155" stroke-width="1" />
+        <circle cx="34" cy="34" r="24" fill="#60A5FA" />
+        <circle cx="34" cy="34" r="10" fill="#020617" />
+        <path d="M28 44 L40 44" stroke="#020617" stroke-width="4" stroke-linecap="round" />
+        <text x="0" y="90" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Performance</text>
+    </g>
+
+    <g transform="translate(580, 90)">
+        <rect x="0" y="0" width="120" height="160" rx="24" fill="#020617" opacity="0.9" />
+        <rect x="16" y="24" width="88" height="12" rx="6" fill="#94A3B8" />
+        <rect x="16" y="46" width="110" height="12" rx="6" fill="#94A3B8" />
+        <rect x="16" y="72" width="98" height="12" rx="6" fill="#94A3B8" />
+        <path d="M60 104 C 44 104 34 96 34 80 L 34 64 C 34 50 44 42 60 42 C 76 42 86 50 86 64 L 86 80 C 86 96 76 104 60 104 Z" fill="#38BDF8" />
+        <path d="M52 72 L 60 80 L 74 66" stroke="#020617" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+
+    <rect x="110" y="346" width="220" height="42" rx="21" fill="url(#buttonGrad)" filter="url(#glow)" />
+    <text x="220" y="375" fill="#020617" font-family="Inter, sans-serif" font-size="16" font-weight="700" text-anchor="middle">Start Testing</text>
+
+    <path d="M 180 370 C 200 410 280 430 340 410 C 400 390 470 410 520 380" stroke="#34D399" stroke-width="3" opacity="0.35" fill="none" />
+    <path d="M 135 380 L 150 355 L 178 371" stroke="#34D399" stroke-width="4" fill="none" stroke-linecap="round" />
+
+    <text x="680" y="420" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Live projects · bug hunting · API testing</text>
+</svg>

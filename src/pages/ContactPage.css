@@ -1,0 +1,306 @@
+/* ContactPage.css */
+
+.contact-page { min-height: 100vh; background: var(--color-bg); }
+
+.contact-hero {
+  padding: 120px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero-mesh {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-mesh);
+  pointer-events: none;
+}
+
+.contact-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.contact-hero-sub {
+  color: var(--color-text-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+/* Info Cards */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.contact-info-card {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact-info-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info-title { font-size: 0.9375rem; font-weight: 700; }
+
+.contact-info-line {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  display: block;
+  transition: color var(--transition-fast);
+}
+
+a.contact-info-line:hover { color: var(--color-primary); }
+
+/* Main Grid */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+/* Form */
+.contact-form-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.contact-form-title { font-size: 1.75rem; font-weight: 800; }
+.contact-form-sub { color: var(--color-text-secondary); }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.contact-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-submit-btn {
+  align-self: flex-start;
+}
+
+.contact-form-disclaimer {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+/* Success */
+.contact-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-12) 0;
+  text-align: center;
+}
+
+.contact-success h3 { font-size: 1.5rem; }
+.contact-success p { color: var(--color-text-secondary); line-height: 1.7; }
+
+/* Sidebar */
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  position: sticky;
+  top: 100px;
+}
+
+.contact-whatsapp {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.whatsapp-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.whatsapp-header h3 { font-size: 1rem; font-weight: 700; }
+
+.contact-whatsapp p { font-size: 0.875rem; color: var(--color-text-secondary); line-height: 1.6; }
+
+.contact-office {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contact-office h3 { font-weight: 700; }
+
+.office-map-placeholder {
+  height: 120px;
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.office-details p {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.contact-quick {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contact-quick h3 { font-weight: 700; }
+
+.quick-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.quick-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+/* Form Validation Styles */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  position: relative;
+}
+
+.input-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.input-field {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface-2);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: 0.9375rem;
+  font-family: var(--font-body);
+  transition: all var(--transition-base);
+  outline: none;
+}
+
+.input-field:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-3);
+}
+
+.input-field:focus {
+  border-color: var(--color-primary-light);
+  background: var(--color-surface-2);
+  box-shadow: 0 0 0 3px rgba(108, 61, 235, 0.15);
+}
+
+.input-field::placeholder {
+  color: var(--color-text-muted);
+}
+
+.input-field.input-error {
+  border-color: var(--color-error);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.input-field.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.error-message {
+  font-size: 0.8125rem;
+  color: var(--color-error);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  animation: slideInError 0.25s ease;
+}
+
+@keyframes slideInError {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact-submit-btn:disabled:hover {
+  transform: none;
+}
+
+@media (max-width: 1024px) {
+  .contact-main-grid { grid-template-columns: 1fr; }
+  .contact-sidebar { position: static; }
+}
+
+@media (max-width: 768px) {
+  .contact-info-grid { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .contact-info-grid { grid-template-columns: 1fr; }
+}
