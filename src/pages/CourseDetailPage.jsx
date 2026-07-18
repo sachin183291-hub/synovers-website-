@@ -181,7 +181,7 @@ export default function CourseDetailPage() {
                 <p className="cd-includes-title">This course includes:</p>
                 {[
                   { icon: <Clock size={15} />, text: `${course.hours} hours of content` },
-                  { icon: <Play size={15} />, text: 'Live + Recorded sessions' },
+                  { icon: <Play size={15} />, text: 'Live and recorded access' },
                   { icon: <Download size={15} />, text: 'Downloadable resources' },
                   { icon: <Award size={15} />, text: 'Industry certificate' },
                   { icon: <Briefcase size={15} />, text: 'Placement assistance' },
