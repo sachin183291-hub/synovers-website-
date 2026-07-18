@@ -4,7 +4,9 @@ const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('synovers-theme') || 'dark'
+    const saved = localStorage.getItem('synovers-theme')
+    if (saved) return saved
+    return 'dark'
   })
 
   useEffect(() => {
