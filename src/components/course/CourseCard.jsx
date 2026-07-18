@@ -5,11 +5,9 @@ export default function CourseCard({ course, delay = 0 }) {
   const discount = Math.round((1 - course.price / course.originalPrice) * 100)
 
   // Normalize mode/delivery information
-  const hasRecorded = String(course.mode || '').toLowerCase().includes('record')
   let deliveryLabel = 'Online'
   const modeLower = String(course.mode || '').toLowerCase()
   if (modeLower.includes('lab')) deliveryLabel = 'Online + Lab'
-  else if (modeLower.includes('record') && modeLower.includes('live')) deliveryLabel = 'Live (with recordings)'
   else if (modeLower.includes('live')) deliveryLabel = 'Live'
   else if (modeLower.includes('offline')) deliveryLabel = 'Offline'
   else if (modeLower.trim() !== '') deliveryLabel = course.mode
@@ -48,9 +46,6 @@ export default function CourseCard({ course, delay = 0 }) {
           <span className="badge" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.04)', color: 'var(--color-text-primary)' }}>
             {deliveryLabel}
           </span>
-          {hasRecorded && (
-            <span className="badge badge-success">Recording available</span>
-          )}
         </div>
 
         <h3 className="course-card-title">{course.title}</h3>

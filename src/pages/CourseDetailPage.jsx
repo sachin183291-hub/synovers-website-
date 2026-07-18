@@ -65,11 +65,9 @@ export default function CourseDetailPage() {
 
   const discount = Math.round((1 - course.price / course.originalPrice) * 100)
   // Normalize delivery/mode info
-  const hasRecorded = String(course.mode || '').toLowerCase().includes('record')
   let deliveryLabel = 'Online'
   const modeLower = String(course.mode || '').toLowerCase()
   if (modeLower.includes('lab')) deliveryLabel = 'Online + Lab'
-  else if (modeLower.includes('record') && modeLower.includes('live')) deliveryLabel = 'Live (with recordings)'
   else if (modeLower.includes('live')) deliveryLabel = 'Live'
   else if (modeLower.includes('offline')) deliveryLabel = 'Offline'
   else if (modeLower.trim() !== '') deliveryLabel = course.mode
@@ -119,9 +117,6 @@ export default function CourseDetailPage() {
               </div>
               <div className="cd-delivery-row">
                 <span className="badge badge-secondary">{deliveryLabel}</span>
-                {hasRecorded && (
-                  <span className="badge badge-success" style={{ marginLeft: 8 }}>Recording available</span>
-                )}
               </div>
 
               {/* Instructor */}
