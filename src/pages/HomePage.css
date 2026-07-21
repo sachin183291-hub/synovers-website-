@@ -560,6 +560,8 @@
   .leadership-grid { grid-template-columns: 1fr; max-width: 100%; }
   .leader-card-premium { min-height: auto; }
   .leader-img-wrap { height: 280px !important; }
+  .leader-card-founder .leader-img-wrap,
+  .leader-card-ceo .leader-img-wrap { height: 380px !important; }
   .leader-img { object-position: center top; }
   .leader-content { padding: 20px 18px; }
   .blog-section .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
