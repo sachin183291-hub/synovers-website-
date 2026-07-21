@@ -1,57 +1,104 @@
 <svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#4F46E5" />
+        <linearGradient id="pyfsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#6C3DEB" />
             <stop offset="100%" stop-color="#A855F7" />
         </linearGradient>
-        
-        <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+        <pattern id="pyfsGrid" width="40" height="40" patternUnits="userSpaceOnUse">
             <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
             <circle cx="40" cy="40" r="1.5" fill="rgba(255,255,255,0.15)"/>
         </pattern>
-
-        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="30" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-        </filter>
-        
-        <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+        <filter id="pyfsSoftGlow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="80" />
         </filter>
+        <filter id="pyfsGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
     </defs>
-    
-    <!-- Base Background -->
+
     <rect width="800" height="450" fill="#0F172A" />
-    
-    <!-- Giant Glowing Orbs -->
-    <circle cx="0" cy="0" r="300" fill="#4F46E5" opacity="0.3" filter="url(#softGlow)" />
-    <circle cx="800" cy="450" r="350" fill="#A855F7" opacity="0.4" filter="url(#softGlow)" />
-    
-    <!-- Grid Overlay -->
-    <rect width="800" height="450" fill="url(#gridPattern)" />
-    
-    <!-- Giant Watermark Icon -->
-    <text x="700" y="350" font-size="280" font-family="sans-serif" font-weight="900" fill="rgba(255,255,255,0.06)" text-anchor="middle" dominant-baseline="middle" style="transform: rotate(-15deg); transform-origin: 700px 350px;">🐍</text>
-    
-    <!-- Decorative Lines -->
-    <path d="M -100 350 L 300 -50" stroke="#4F46E5" stroke-width="2" stroke-opacity="0.2" />
-    <path d="M 500 500 L 900 100" stroke="#A855F7" stroke-width="2" stroke-opacity="0.3" />
-    
-    <!-- Content Card Area -->
-    <g transform="translate(100, 100)">
-        <!-- Top Tech Pill -->
-        <rect x="0" y="0" width="130" height="32" rx="16" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
-        <circle cx="16" cy="16" r="6" fill="#4F46E5" />
-        <text x="32" y="21" fill="#ffffff" font-size="14" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="600" letter-spacing="1">MASTERCLASS</text>
-        
-        <!-- Main Title (Safely Centered/Padded to avoid crop) -->
-        <text x="0" y="90" fill="#ffffff" font-size="48" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="800" letter-spacing="-1">AI + Python Fullstack</text>
-        
-        <!-- Subtitle -->
-        <text x="0" y="140" fill="rgba(255,255,255,0.7)" font-size="24" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="400">React, Python &amp; LLM Integrations</text>
-        
-        <!-- Bottom UI elements -->
-        <rect x="0" y="190" width="140" height="40" rx="8" fill="url(#bgGrad)" filter="url(#glow)" opacity="0.9" />
-        <text x="70" y="216" fill="#ffffff" font-size="16" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="700" text-anchor="middle">Enroll Now</text>
+    <circle cx="70" cy="60" r="270" fill="#5B21B6" opacity="0.25" filter="url(#pyfsSoftGlow)" />
+    <circle cx="760" cy="400" r="260" fill="#7C3AED" opacity="0.2" filter="url(#pyfsSoftGlow)" />
+    <rect width="800" height="450" fill="url(#pyfsGrid)" />
+
+    <!-- Full Stack layers (right side) -->
+    <!-- Browser mockup -->
+    <rect x="460" y="75" width="310" height="185" rx="12" fill="#0A0F1E" stroke="#6C3DEB" stroke-width="1.5" opacity="0.95"/>
+    <rect x="460" y="75" width="310" height="32" rx="12" fill="#1A1030" opacity="0.9"/>
+    <rect x="460" y="97" width="310" height="10" fill="#1A1030"/>
+    <!-- Browser controls -->
+    <circle cx="478" cy="91" r="5" fill="#EF4444" opacity="0.7"/>
+    <circle cx="494" cy="91" r="5" fill="#F59E0B" opacity="0.7"/>
+    <circle cx="510" cy="91" r="5" fill="#22C55E" opacity="0.7"/>
+    <!-- URL bar -->
+    <rect x="524" y="83" width="220" height="16" rx="6" fill="#0F0A20" stroke="#6C3DEB" stroke-width="1" opacity="0.8"/>
+    <text x="634" y="95" text-anchor="middle" fill="#A78BFA" font-size="9" font-family="monospace" opacity="0.8">https://myapp.synovers.com</text>
+
+    <!-- React component display -->
+    <rect x="472" y="116" width="135" height="134" rx="8" fill="#0F0A20" opacity="0.8"/>
+    <text x="480" y="132" fill="#A855F7" font-size="10" font-family="monospace" opacity="0.9">// React Component</text>
+    <text x="480" y="147" fill="#6C3DEB" font-size="10" font-family="monospace" opacity="0.8">function App() {'{'}</text>
+    <text x="480" y="162" fill="#818CF8" font-size="10" font-family="monospace" opacity="0.75">  const [data, set]</text>
+    <text x="480" y="177" fill="#818CF8" font-size="10" font-family="monospace" opacity="0.7">  = useState([])</text>
+    <text x="480" y="192" fill="#A855F7" font-size="10" font-family="monospace" opacity="0.75">  return (</text>
+    <text x="480" y="207" fill="#C084FC" font-size="10" font-family="monospace" opacity="0.7">    &lt;Dashboard /&gt;</text>
+    <text x="480" y="222" fill="#A855F7" font-size="10" font-family="monospace" opacity="0.75">  )</text>
+    <text x="480" y="237" fill="#6C3DEB" font-size="10" font-family="monospace" opacity="0.8">{'}'}</text>
+
+    <!-- Python/FastAPI (right panel) -->
+    <rect x="615" y="116" width="143" height="134" rx="8" fill="#0A0F1E" opacity="0.8"/>
+    <text x="623" y="132" fill="#A855F7" font-size="10" font-family="monospace" opacity="0.9"># FastAPI Route</text>
+    <text x="623" y="147" fill="#818CF8" font-size="10" font-family="monospace" opacity="0.8">@app.get("/ai")</text>
+    <text x="623" y="162" fill="#C084FC" font-size="10" font-family="monospace" opacity="0.75">async def query(</text>
+    <text x="623" y="177" fill="#C084FC" font-size="10" font-family="monospace" opacity="0.7">  prompt: str):</text>
+    <text x="623" y="192" fill="#818CF8" font-size="10" font-family="monospace" opacity="0.7">  resp = openai</text>
+    <text x="623" y="207" fill="#818CF8" font-size="10" font-family="monospace" opacity="0.65">  .chat(prompt)</text>
+    <text x="623" y="222" fill="#A855F7" font-size="10" font-family="monospace" opacity="0.75">  return resp</text>
+
+    <!-- Tech stack pills at bottom -->
+    <rect x="460" y="270" width="310" height="110" rx="12" fill="#0A0F1E" stroke="#6C3DEB" stroke-width="1" opacity="0.9"/>
+    <!-- Stack label -->
+    <text x="475" y="288" fill="#A78BFA" font-size="10" font-family="monospace" opacity="0.7">Full Stack Architecture</text>
+    <!-- Frontend -->
+    <rect x="472" y="296" width="68" height="26" rx="6" fill="#1A1030" stroke="#A855F7" stroke-width="1" opacity="0.9"/>
+    <text x="506" y="313" text-anchor="middle" fill="#C084FC" font-size="10" font-family="monospace">React.js</text>
+    <!-- API -->
+    <rect x="546" y="296" width="68" height="26" rx="6" fill="#1A1030" stroke="#6C3DEB" stroke-width="1" opacity="0.9"/>
+    <text x="580" y="313" text-anchor="middle" fill="#A78BFA" font-size="10" font-family="monospace">FastAPI</text>
+    <!-- DB -->
+    <rect x="620" y="296" width="68" height="26" rx="6" fill="#1A1030" stroke="#A855F7" stroke-width="1" opacity="0.9"/>
+    <text x="654" y="313" text-anchor="middle" fill="#C084FC" font-size="10" font-family="monospace">MongoDB</text>
+    <!-- AI Layer -->
+    <rect x="694" y="296" width="64" height="26" rx="6" fill="#2D1B69" stroke="#7C3AED" stroke-width="1" opacity="0.9"/>
+    <text x="726" y="313" text-anchor="middle" fill="#DDD6FE" font-size="10" font-family="monospace">LangChain</text>
+    <!-- Arrow row -->
+    <text x="476" y="342" fill="#6C3DEB" font-size="16" font-family="monospace" opacity="0.7">↑ Frontend</text>
+    <text x="548" y="342" fill="#6C3DEB" font-size="16" font-family="monospace" opacity="0.7">↑ Backend</text>
+    <text x="632" y="342" fill="#6C3DEB" font-size="16" font-family="monospace" opacity="0.7">↑ DB</text>
+    <text x="698" y="342" fill="#7C3AED" font-size="16" font-family="monospace" opacity="0.7">↑ AI</text>
+    <!-- Deployment box -->
+    <rect x="472" y="352" width="284" height="22" rx="6" fill="#1A1030" stroke="#7C3AED" stroke-width="1" opacity="0.85"/>
+    <text x="614" y="367" text-anchor="middle" fill="#A78BFA" font-size="10" font-family="monospace" opacity="0.8">🚀 Deploy on AWS / Vercel / Heroku</text>
+
+    <!-- Content (left) -->
+    <g transform="translate(60, 90)">
+        <rect x="0" y="0" width="170" height="32" rx="16" fill="rgba(108,61,235,0.12)" stroke="rgba(108,61,235,0.35)" stroke-width="1" />
+        <circle cx="16" cy="16" r="6" fill="#6C3DEB" />
+        <text x="32" y="21" fill="#A78BFA" font-size="13" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="700" letter-spacing="1">FULLSTACK TRACK</text>
+
+        <text x="0" y="95" fill="#ffffff" font-size="38" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="800" letter-spacing="-1">AI + Python</text>
+        <text x="0" y="148" fill="#C084FC" font-size="38" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="800" letter-spacing="-1">Fullstack Dev</text>
+        <text x="0" y="195" fill="rgba(255,255,255,0.65)" font-size="18" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="400">React, Python &amp; LLM Integration</text>
+
+        <rect x="0" y="218" width="56" height="28" rx="14" fill="rgba(108,61,235,0.15)" stroke="rgba(108,61,235,0.4)" stroke-width="1"/>
+        <text x="28" y="237" text-anchor="middle" fill="#C084FC" font-size="13" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="600">React</text>
+        <rect x="68" y="218" width="66" height="28" rx="14" fill="rgba(108,61,235,0.15)" stroke="rgba(108,61,235,0.4)" stroke-width="1"/>
+        <text x="101" y="237" text-anchor="middle" fill="#C084FC" font-size="13" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="600">Python</text>
+        <rect x="146" y="218" width="82" height="28" rx="14" fill="rgba(108,61,235,0.15)" stroke="rgba(108,61,235,0.4)" stroke-width="1"/>
+        <text x="187" y="237" text-anchor="middle" fill="#C084FC" font-size="13" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="600">LangChain</text>
+
+        <rect x="0" y="260" width="150" height="44" rx="10" fill="url(#pyfsGrad)" opacity="0.9" filter="url(#pyfsGlow)"/>
+        <text x="75" y="288" fill="#ffffff" font-size="16" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="700" text-anchor="middle">Enroll Now →</text>
     </g>
 </svg>

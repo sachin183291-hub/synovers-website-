@@ -52,29 +52,29 @@ export default function ContactPage() {
 
   const validateForm = () => {
     const newErrors = {}
-    
+
     if (!form.name.trim()) newErrors.name = 'Name is required'
     else if (form.name.trim().length < 2) newErrors.name = 'Name must be at least 2 characters'
-    
+
     if (!form.email.trim()) newErrors.email = 'Email is required'
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = 'Please enter a valid email'
-    
+
     if (!form.phone.trim()) newErrors.phone = 'Phone number is required'
     else if (!/^(\+91|0)?[6-9]\d{9}$/.test(form.phone.replace(/\D/g, ''))) newErrors.phone = 'Please enter a valid Indian phone number'
-    
+
     return newErrors
   }
 
   const handleSubmit = e => {
     e.preventDefault()
     const newErrors = validateForm()
-    
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
       toast.error('Please fix the errors below')
       return
     }
-    
+
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
@@ -128,7 +128,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Form + Map */}
-      <section className="section">
+      <section className="section" id="send-message">
         <div className="container">
           <div className="contact-main-grid">
             {/* Form */}
@@ -141,7 +141,7 @@ export default function ContactPage() {
                   <CheckCircle size={56} style={{ color: 'var(--color-success)' }} />
                   <h3>Message Received!</h3>
                   <p>Thank you <strong>{form.name}</strong>! Our counsellors will contact you at <strong>{form.phone}</strong> within 24 hours.</p>
-                  <button className="btn btn-outline" onClick={() => { 
+                  <button className="btn btn-outline" onClick={() => {
                     setSubmitted(false)
                     setForm({ name: '', email: '', phone: '', course: '', message: '' })
                     setErrors({})
@@ -159,7 +159,7 @@ export default function ContactPage() {
                         name="name"
                         value={form.name}
                         onChange={handleChange}
-                        placeholder="John Doe"
+                        placeholder="Enter your name"
                         className={`input-field ${errors.name ? 'input-error' : ''}`}
                         required
                       />
@@ -172,7 +172,7 @@ export default function ContactPage() {
                         name="phone"
                         value={form.phone}
                         onChange={handleChange}
-                        placeholder="+91 9344626768"
+                        placeholder="Enter your mobile number"
                         className={`input-field ${errors.phone ? 'input-error' : ''}`}
                         required
                       />
@@ -186,7 +186,7 @@ export default function ContactPage() {
                       name="email"
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="john@example.com"
+                      placeholder="Enter your Gmail ID"
                       className={`input-field ${errors.email ? 'input-error' : ''}`}
                       required
                     />

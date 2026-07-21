@@ -122,7 +122,7 @@ export default function LoginPage() {
           </div>
 
           <p className="auth-switch">
-            Don't have an account? <Link to="/register" className="auth-switch-link">Sign up free</Link>
+            Don't have an account? <Link to="/contact#send-message" className="auth-switch-link">Sign up free</Link>
           </p>
         </div>
       </div>

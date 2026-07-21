@@ -16,6 +16,18 @@ function renderBlogContent(content) {
       if (lines[0]?.startsWith('### ')) {
         return <h3 key={index} className="blog-section-title">{lines[0].replace('### ', '')}</h3>
       }
+      
+      const imgMatch = lines[0]?.match(/^!\[([^\]]*)\]\(([^)]+)\)$/)
+      if (imgMatch) {
+        return (
+          <img 
+            key={index} 
+            src={imgMatch[2]} 
+            alt={imgMatch[1]} 
+            className="blog-inline-image" 
+          />
+        )
+      }
 
       if (listItems.length > 0 && listItems.length === lines.length) {
         return (

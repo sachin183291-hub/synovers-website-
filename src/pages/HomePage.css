@@ -708,7 +708,7 @@
 
 @media (max-width: 768px) {
   .leadership-grid { grid-template-columns: 1fr; }
-  .leader-img-wrap { height: 280px; }
+  .leader-img-wrap { height: 280px !important; }
   .leader-content { padding: 20px 18px; }
 }
 

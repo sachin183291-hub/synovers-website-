@@ -140,7 +140,7 @@ function HeroSection() {
                 <p className="hv-badge-sub">Priya S. — MERN Stack</p>
               </div>
             </div>
-           
+
 
             {/* Decorative dot pattern */}
             <div className="hv-dots" aria-hidden="true" />
@@ -233,7 +233,7 @@ function CoursesSection() {
 
         <div className="text-center" style={{ marginTop: '48px' }}>
           <Link to="/courses" className="btn btn-outline btn-lg">
-            View All 12 Courses <ArrowRight size={18} />
+            View All 17 Courses <ArrowRight size={18} />
           </Link>
         </div>
       </div>

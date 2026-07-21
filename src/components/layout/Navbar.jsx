@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Sun, Moon, ChevronDown, Phone, Mail, Zap } from 'lucide-react'
-import { useTheme } from '../../context/ThemeContext'
+import { Menu, X, ChevronDown, Phone, Mail, Zap } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import { COURSES } from '../../data/constants'
 import './Navbar.css'
@@ -16,7 +15,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [coursesOpen, setCoursesOpen] = useState(false)
-  const { theme, toggleTheme } = useTheme()
   const { user, logout, isAuthenticated } = useAuth()
   const location = useLocation()
 
@@ -34,7 +32,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top Bar */}
-      <div className="topbar">
+      <div className="topbar hide-mobile">
         <div className="container">
           <div className="topbar-inner">
             <div className="topbar-left">
@@ -121,9 +119,6 @@ export default function Navbar() {
 
             {/* Actions */}
             <div className="navbar-actions hide-mobile">
-              <button className="theme-toggle" onClick={toggleTheme} title="Toggle theme">
-                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
               {isAuthenticated && (
                 <div className="nav-user">
                   <div className="nav-avatar">{user?.name?.[0] || 'U'}</div>
@@ -137,9 +132,6 @@ export default function Navbar() {
 
             {/* Mobile Toggle */}
             <div className="mobile-controls show-mobile-only">
-              <button className="theme-toggle" onClick={toggleTheme}>
-                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
               <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
                 {menuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>

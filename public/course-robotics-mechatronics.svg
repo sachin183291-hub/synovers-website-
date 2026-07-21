@@ -1,13 +1,93 @@
-<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="600" rx="40" fill="#0F172A"/>
-  <rect x="260" y="200" width="280" height="220" rx="28" fill="#1E293B" stroke="#FB923C" stroke-width="12"/>
-  <circle cx="360" cy="290" r="26" fill="#FCD34D"/>
-  <circle cx="440" cy="290" r="26" fill="#FCD34D"/>
-  <rect x="360" y="340" width="80" height="60" rx="20" fill="#F97316"/>
-  <path d="M310 240c10-24 24-36 44-36h92c20 0 34 12 44 36" stroke="#F97316" stroke-width="16" fill="none"/>
-  <path d="M260 290h-40" stroke="#FB923C" stroke-width="18" stroke-linecap="round"/>
-  <path d="M540 290h40" stroke="#FB923C" stroke-width="18" stroke-linecap="round"/>
-  <line x1="260" y1="340" x2="220" y2="380" stroke="#FB923C" stroke-width="16" stroke-linecap="round"/>
-  <line x1="540" y1="340" x2="580" y2="380" stroke="#FB923C" stroke-width="16" stroke-linecap="round"/>
-  <text x="400" y="520" text-anchor="middle" font-family="Inter, sans-serif" font-size="52" fill="#FDF2F8" font-weight="700">Robotics</text>
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="robGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FB923C" />
+            <stop offset="100%" stop-color="#F97316" />
+        </linearGradient>
+        <pattern id="robGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+            <circle cx="40" cy="40" r="1.5" fill="rgba(255,255,255,0.15)"/>
+        </pattern>
+        <filter id="robSoftGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="80" />
+        </filter>
+        <filter id="robGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+    </defs>
+
+    <!-- Base Background -->
+    <rect width="800" height="450" fill="#0F172A" />
+
+    <!-- Giant Glowing Orbs -->
+    <circle cx="80" cy="100" r="270" fill="#EA580C" opacity="0.22" filter="url(#robSoftGlow)" />
+    <circle cx="760" cy="380" r="280" fill="#F97316" opacity="0.18" filter="url(#robSoftGlow)" />
+
+    <!-- Grid Overlay -->
+    <rect width="800" height="450" fill="url(#robGrid)" />
+
+    <!-- Robot arm visual (right side) -->
+    <!-- Base platform -->
+    <rect x="540" y="360" width="180" height="28" rx="8" fill="#1E293B" stroke="#FB923C" stroke-width="2" opacity="0.9"/>
+    <!-- Base shaft -->
+    <rect x="615" y="320" width="30" height="45" rx="6" fill="#1E293B" stroke="#FB923C" stroke-width="1.5" opacity="0.9"/>
+    <!-- Rotating joint -->
+    <circle cx="630" cy="318" r="20" fill="#1E293B" stroke="#F97316" stroke-width="2" opacity="0.95"/>
+    <circle cx="630" cy="318" r="10" fill="#F97316" opacity="0.35"/>
+    <!-- Arm segment 1 -->
+    <rect x="595" y="235" width="70" height="22" rx="8" fill="#1E293B" stroke="#FB923C" stroke-width="1.5" transform="rotate(-20, 630, 246)" opacity="0.9"/>
+    <!-- Elbow joint -->
+    <circle cx="572" cy="214" r="16" fill="#1E293B" stroke="#F97316" stroke-width="2" opacity="0.95"/>
+    <circle cx="572" cy="214" r="8" fill="#F97316" opacity="0.35"/>
+    <!-- Arm segment 2 -->
+    <rect x="490" y="150" width="120" height="20" rx="7" fill="#1E293B" stroke="#FB923C" stroke-width="1.5" transform="rotate(-35, 540, 160)" opacity="0.9"/>
+    <!-- Wrist joint -->
+    <circle cx="508" cy="138" r="14" fill="#1E293B" stroke="#F97316" stroke-width="2" opacity="0.95"/>
+    <circle cx="508" cy="138" r="7" fill="#F97316" opacity="0.35"/>
+    <!-- Gripper fingers -->
+    <rect x="470" y="105" width="12" height="40" rx="4" fill="#F97316" transform="rotate(-40, 475, 120)" opacity="0.8"/>
+    <rect x="490" y="105" width="12" height="40" rx="4" fill="#F97316" transform="rotate(30, 495, 120)" opacity="0.8"/>
+    <!-- Control box -->
+    <rect x="640" y="200" width="110" height="80" rx="10" fill="#1E293B" stroke="#FB923C" stroke-width="1.5" opacity="0.85"/>
+    <rect x="652" y="212" width="86" height="56" rx="6" fill="#0F172A" opacity="0.6"/>
+    <text x="695" y="242" text-anchor="middle" fill="#FB923C" font-size="11" font-family="monospace" font-weight="700" opacity="0.8">ROS</text>
+    <text x="695" y="258" text-anchor="middle" fill="#FB923C" font-size="10" font-family="monospace" opacity="0.6">CTRL</text>
+    <!-- Small dots on control box -->
+    <circle cx="668" cy="220" r="3" fill="#22C55E" opacity="0.7"/>
+    <circle cx="680" cy="220" r="3" fill="#EF4444" opacity="0.7"/>
+    <!-- Wheel/Track at bottom -->
+    <ellipse cx="570" cy="388" rx="30" ry="10" fill="#374151" stroke="#FB923C" stroke-width="1.5" opacity="0.7"/>
+    <ellipse cx="670" cy="388" rx="30" ry="10" fill="#374151" stroke="#FB923C" stroke-width="1.5" opacity="0.7"/>
+    <!-- Grid lines around robot -->
+    <line x1="480" y1="395" x2="760" y2="395" stroke="#FB923C" stroke-width="1" stroke-dasharray="5,5" opacity="0.2"/>
+
+    <!-- Content (left) -->
+    <g transform="translate(60, 90)">
+        <!-- Top Tech Pill -->
+        <rect x="0" y="0" width="155" height="32" rx="16" fill="rgba(251,146,60,0.12)" stroke="rgba(251,146,60,0.35)" stroke-width="1" />
+        <circle cx="16" cy="16" r="6" fill="#FB923C" />
+        <text x="32" y="21" fill="#FB923C" font-size="13" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="700" letter-spacing="1">HARDWARE TRACK</text>
+
+        <!-- Main Title -->
+        <text x="0" y="95" fill="#ffffff" font-size="44" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="800" letter-spacing="-1">Robotics &amp;</text>
+        <text x="0" y="148" fill="#FB923C" font-size="44" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="800" letter-spacing="-1">Mechatronics</text>
+
+        <!-- Subtitle -->
+        <text x="0" y="195" fill="rgba(255,255,255,0.65)" font-size="19" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="400">Robotic Systems &amp; Control</text>
+
+        <!-- Tags row -->
+        <rect x="0" y="218" width="76" height="28" rx="14" fill="rgba(251,146,60,0.15)" stroke="rgba(251,146,60,0.4)" stroke-width="1"/>
+        <text x="38" y="237" text-anchor="middle" fill="#FB923C" font-size="13" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="600">Robotics</text>
+
+        <rect x="88" y="218" width="48" height="28" rx="14" fill="rgba(251,146,60,0.15)" stroke="rgba(251,146,60,0.4)" stroke-width="1"/>
+        <text x="112" y="237" text-anchor="middle" fill="#FB923C" font-size="13" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="600">ROS</text>
+
+        <rect x="148" y="218" width="68" height="28" rx="14" fill="rgba(251,146,60,0.15)" stroke="rgba(251,146,60,0.4)" stroke-width="1"/>
+        <text x="182" y="237" text-anchor="middle" fill="#FB923C" font-size="13" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="600">Control</text>
+
+        <!-- CTA button -->
+        <rect x="0" y="260" width="150" height="44" rx="10" fill="url(#robGrad)" opacity="0.9" filter="url(#robGlow)"/>
+        <text x="75" y="288" fill="#ffffff" font-size="16" font-family="Segoe UI, -apple-system, Roboto, sans-serif" font-weight="700" text-anchor="middle">Enroll Now →</text>
+    </g>
 </svg>

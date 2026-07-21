@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
-import { useState, useEffect } from 'react'
 
 // Pages
 import HomePage from './pages/HomePage'
@@ -9,7 +8,6 @@ import CourseDetailPage from './pages/CourseDetailPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import LoginPage from './pages/auth/LoginPage'
-import RegisterPage from './pages/auth/RegisterPage'
 import StudentDashboard from './pages/student/StudentDashboard'
 import AdminDashboard from './pages/admin/AdminDashboard'
 import HireTalentPage from './pages/HireTalentPage'
@@ -21,36 +19,36 @@ import ServicesPage from './pages/ServicesPage'
 import PortfolioPage from './pages/PortfolioPage'
 import SpecialOfferPage from './pages/SpecialOfferPage'
 import NotFoundPage from './pages/NotFoundPage'
+import ScrollToTop from './components/ScrollToTop'
 
 // Context
-import { ThemeProvider } from './context/ThemeContext'
 import { AuthProvider } from './context/AuthContext'
 
 function App() {
   return (
-    <ThemeProvider>
-      <AuthProvider>
-        <BrowserRouter>
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              style: {
-                background: '#161929',
-                color: '#F1F5F9',
-                border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: '12px',
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.9rem',
-              },
-              success: {
-                iconTheme: { primary: '#22C55E', secondary: '#161929' },
-              },
-              error: {
-                iconTheme: { primary: '#EF4444', secondary: '#161929' },
-              },
-            }}
-          />
-          <Routes>
+    <AuthProvider>
+      <BrowserRouter>
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            style: {
+              background: '#FFFFFF',
+              color: '#0F172A',
+              border: '1px solid rgba(15,23,42,0.08)',
+              borderRadius: '12px',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.9rem',
+            },
+            success: {
+              iconTheme: { primary: '#22C55E', secondary: '#FFFFFF' },
+            },
+            error: {
+              iconTheme: { primary: '#EF4444', secondary: '#FFFFFF' },
+            },
+          }}
+        />
+        <ScrollToTop />
+        <Routes>
             {/* Public */}
             <Route path="/" element={<HomePage />} />
             <Route path="/courses" element={<CoursesPage />} />
@@ -68,7 +66,7 @@ function App() {
 
             {/* Auth */}
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/register" element={<Navigate to="/contact#send-message" replace />} />
 
             {/* Portals */}
             <Route path="/app/*" element={<StudentDashboard />} />
@@ -79,7 +77,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </AuthProvider>
-    </ThemeProvider>
   )
 }
 

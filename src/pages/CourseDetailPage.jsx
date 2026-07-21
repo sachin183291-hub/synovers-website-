@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   Clock, Users, BookOpen, Star, CheckCircle, ChevronDown,
   ChevronRight, Zap, Award, TrendingUp, MessageCircle,
@@ -64,6 +64,34 @@ export default function CourseDetailPage() {
   }
 
   const discount = Math.round((1 - course.price / course.originalPrice) * 100)
+  const [timeLeft, setTimeLeft] = useState({ days: 2, hours: 14, minutes: 38, seconds: 0 })
+
+  useEffect(() => {
+    const target = new Date()
+    target.setDate(target.getDate() + 2)
+    target.setHours(target.getHours() + 14)
+    target.setMinutes(target.getMinutes() + 38)
+    target.setSeconds(target.getSeconds())
+
+    const updateTimer = () => {
+      const now = new Date()
+      const diff = target - now
+      if (diff <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+        return
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24)
+      const minutes = Math.floor((diff / (1000 * 60)) % 60)
+      const seconds = Math.floor((diff / 1000) % 60)
+      setTimeLeft({ days, hours, minutes, seconds })
+    }
+
+    updateTimer()
+    const timerId = setInterval(updateTimer, 1000)
+    return () => clearInterval(timerId)
+  }, [])
+
   // Normalize delivery/mode info
   let deliveryLabel = 'Online'
   const modeLower = String(course.mode || '').toLowerCase()
@@ -164,7 +192,9 @@ export default function CourseDetailPage() {
               )}
               <div className="cd-offer-timer">
                 <span className="glow-dot" />
-                <span>Offer ends in <strong>2 days 14:38:00</strong></span>
+                <span>
+                  Offer ends in <strong>{`${timeLeft.days} days ${String(timeLeft.hours).padStart(2, '0')}:${String(timeLeft.minutes).padStart(2, '0')}:${String(timeLeft.seconds).padStart(2, '0')}`}</strong>
+                </span>
               </div>
               <Link to="/contact" className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center' }}>
                 Enroll Now — Get Started

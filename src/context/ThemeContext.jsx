@@ -1,23 +1,10 @@
-import { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext } from 'react'
 
 const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('synovers-theme')
-    if (saved) return saved
-    return 'dark'
-  })
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-    localStorage.setItem('synovers-theme', theme)
-  }, [theme])
-
-  const toggleTheme = () => setTheme(t => t === 'dark' ? 'light' : 'dark')
-
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{}}>
       {children}
     </ThemeContext.Provider>
   )

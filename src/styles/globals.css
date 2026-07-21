@@ -6,13 +6,13 @@
 
 /* ======== CSS Custom Properties ======== */
 :root {
-  /* Colors — Dark Mode Defaults */
-  --color-bg:            #0D0F1A;
-  --color-surface:       #161929;
-  --color-surface-2:     #1E2338;
-  --color-surface-3:     #252A45;
-  --color-border:        rgba(255, 255, 255, 0.08);
-  --color-border-strong: rgba(255, 255, 255, 0.16);
+  /* Colors — Light Mode Defaults */
+  --color-bg:            #F8FAFC;
+  --color-surface:       #FFFFFF;
+  --color-surface-2:     #F1F5F9;
+  --color-surface-3:     #E2E8F0;
+  --color-border:        rgba(0, 0, 0, 0.08);
+  --color-border-strong: rgba(0, 0, 0, 0.16);
 
   /* Brand */
   --color-primary:       #6C3DEB;
@@ -25,9 +25,9 @@
   --color-accent-light:  #FF8A5C;
 
   /* Text */
-  --color-text-primary:  #F1F5F9;
-  --color-text-secondary:#94A3B8;
-  --color-text-muted:    #64748B;
+  --color-text-primary:  #0F172A;
+  --color-text-secondary:#475569;
+  --color-text-muted:    #94A3B8;
 
   /* Semantic */
   --color-success:       #22C55E;
@@ -67,7 +67,7 @@
   --shadow-md:   0 4px 20px rgba(108, 61, 235, 0.15);
   --shadow-lg:   0 20px 60px rgba(108, 61, 235, 0.2);
   --shadow-glow: 0 0 40px rgba(108, 61, 235, 0.4);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
 
   /* Transitions */
   --transition-fast:   150ms ease;
@@ -79,26 +79,9 @@
   --gradient-hero:     linear-gradient(135deg, #6C3DEB 0%, #4A1FD4 40%, #00D9B0 100%);
   --gradient-cta:      linear-gradient(90deg, #6C3DEB 0%, #FF6B35 100%);
   --gradient-card:     linear-gradient(180deg, rgba(108,61,235,0.08) 0%, rgba(0,217,176,0.04) 100%);
-  --gradient-mesh:     radial-gradient(ellipse at 20% 50%, rgba(108,61,235,0.15) 0%, transparent 60%),
-                       radial-gradient(ellipse at 80% 20%, rgba(0,217,176,0.1) 0%, transparent 50%),
-                       radial-gradient(ellipse at 60% 80%, rgba(255,107,53,0.08) 0%, transparent 50%);
-}
-
-/* ======== Light Mode ======== */
-[data-theme="light"] {
-  --color-bg:            #F8FAFC;
-  --color-surface:       #FFFFFF;
-  --color-surface-2:     #F1F5F9;
-  --color-surface-3:     #E2E8F0;
-  --color-border:        rgba(0, 0, 0, 0.08);
-  --color-border-strong: rgba(0, 0, 0, 0.16);
-  --color-text-primary:  #0F172A;
-  --color-text-secondary:#475569;
-  --color-text-muted:    #94A3B8;
-  --shadow-card:         0 4px 24px rgba(0, 0, 0, 0.08);
-  --gradient-mesh:       radial-gradient(ellipse at 20% 50%, rgba(108,61,235,0.06) 0%, transparent 60%),
-                         radial-gradient(ellipse at 80% 20%, rgba(0,217,176,0.05) 0%, transparent 50%),
-                         radial-gradient(ellipse at 60% 80%, rgba(255,107,53,0.04) 0%, transparent 50%);
+  --gradient-mesh:     radial-gradient(ellipse at 20% 50%, rgba(108,61,235,0.06) 0%, transparent 60%),
+                       radial-gradient(ellipse at 80% 20%, rgba(0,217,176,0.05) 0%, transparent 50%),
+                       radial-gradient(ellipse at 60% 80%, rgba(255,107,53,0.04) 0%, transparent 50%);
 }
 
 /* ======== Reset & Base ======== */
