@@ -434,9 +434,21 @@
 }
 
 @media (max-width: 768px) {
-  .cd-hero { padding: 100px 0 40px; }
+  .cd-hero { padding: 80px 0 32px; }
   .cd-highlights-grid { grid-template-columns: 1fr; }
   .cd-cta-inner { flex-direction: column; text-align: center; }
   .cd-cta-actions { flex-direction: column; width: 100%; }
-  .cd-cta-actions .btn { justify-content: center; }
+  .cd-cta-actions .btn { justify-content: center; width: 100%; }
+  .cd-title { font-size: clamp(1.5rem, 5vw, 2rem); }
+}
+
+@media (max-width: 480px) {
+  .cd-hero { padding: 72px 0 24px; }
+  .cd-enroll-card { margin: 0; }
+  .cd-highlights-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 360px) {
+  .cd-hero { padding: 64px 0 20px; }
+  .cd-title { font-size: 1.4rem; }
 }

@@ -328,7 +328,7 @@ function FounderSection() {
           <div className="leader-card-premium leader-card-founder">
             <div className="leader-img-wrap">
               <a href="https://improved-amber-kdfwcyza.edgeone.dev/Untitled%20design%20(6).png" target="_blank" rel="noreferrer noopener" style={{ display: 'block', width: '100%', height: '100%' }}>
-                <img src="https://improved-amber-kdfwcyza.edgeone.dev/Untitled%20design%20(6).png" alt="Mr. Ramkumar" className="leader-img" style={{ objectPosition: 'top' }} />
+                <img src="https://improved-amber-kdfwcyza.edgeone.dev/Untitled%20design%20(6).png" alt="Mr. Ramkumar" className="leader-img" />
               </a>
               <div className="leader-img-overlay"></div>
               <div className="leader-badge"><Star size={14} fill="#F59E0B" color="#F59E0B" /> Founder</div>
@@ -351,7 +351,7 @@ function FounderSection() {
           {/* Cofounder (CEO & Director) Card */}
           <div className="leader-card-premium leader-card-ceo">
             <div className="leader-img-wrap">
-              <img src="https://cdn.corenexis.com/f/vuK5H57AxZL.jpeg" alt="Mr. Sachin" className="leader-img" style={{ objectPosition: 'top' }} />
+              <img src="https://cdn.corenexis.com/f/vuK5H57AxZL.jpeg" alt="Mr. Sachin" className="leader-img" />
               <div className="leader-img-overlay"></div>
               <div className="leader-badge"><Star size={14} fill="#F59E0B" color="#F59E0B" /> Cofounder (CEO & Director)</div>
             </div>

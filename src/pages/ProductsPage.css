@@ -135,3 +135,16 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .products-page .page-hero { padding: 72px 0 48px; }
+  .products-page .page-hero-inner { grid-template-columns: 1fr; }
+  .products-page .page-actions { flex-direction: column; }
+  .products-page .page-actions .btn { width: 100%; justify-content: center; }
+  .products-page .cta-panel { padding: 24px; }
+}
+
+@media (max-width: 480px) {
+  .products-page .page-hero { padding: 64px 0 32px; }
+  .products-page .cards-grid { grid-template-columns: 1fr; }
+}

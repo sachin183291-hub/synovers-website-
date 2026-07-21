@@ -119,3 +119,16 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .special-offer-page .page-hero { padding: 72px 0 48px; }
+  .special-offer-page .page-hero-inner { grid-template-columns: 1fr; }
+  .special-offer-page .page-actions { flex-direction: column; }
+  .special-offer-page .page-actions .btn { width: 100%; justify-content: center; }
+  .special-offer-page .cta-panel { padding: 24px; }
+}
+
+@media (max-width: 480px) {
+  .special-offer-page .page-hero { padding: 64px 0 32px; }
+  .special-offer-page .offer-grid { grid-template-columns: 1fr; }
+}

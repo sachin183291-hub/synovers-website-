@@ -119,3 +119,16 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .services-page .page-hero { padding: 72px 0 48px; }
+  .services-page .page-hero-inner { grid-template-columns: 1fr; }
+  .services-page .page-actions { flex-direction: column; }
+  .services-page .page-actions .btn { width: 100%; justify-content: center; }
+  .services-page .cta-panel { padding: 24px; }
+}
+
+@media (max-width: 480px) {
+  .services-page .page-hero { padding: 64px 0 32px; }
+  .services-page .cards-grid { grid-template-columns: 1fr; }
+}

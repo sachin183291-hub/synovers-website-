@@ -133,3 +133,17 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .portfolio-page .page-hero { padding: 72px 0 48px; }
+  .portfolio-page .page-hero-inner { grid-template-columns: 1fr; }
+  .portfolio-page .page-actions { flex-direction: column; }
+  .portfolio-page .page-actions .btn { width: 100%; justify-content: center; }
+  .portfolio-page .portfolio-client-list { grid-template-columns: 1fr 1fr; }
+  .portfolio-page .cta-panel { padding: 24px; }
+}
+
+@media (max-width: 480px) {
+  .portfolio-page .page-hero { padding: 64px 0 32px; }
+  .portfolio-page .portfolio-client-list { grid-template-columns: 1fr; }
+}

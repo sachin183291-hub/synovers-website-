@@ -105,11 +105,32 @@
   flex-wrap: wrap;
 }
 
+@media (max-width: 768px) {
+  .not-found-title {
+    font-size: 5rem;
+  }
+  .not-found-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+  .not-found-actions .btn { width: 100%; justify-content: center; }
+}
+
 @media (max-width: 480px) {
   .not-found-title {
     font-size: 4rem;
   }
   .not-found-subtitle {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .not-found-title {
+    font-size: 3.2rem;
+  }
+  .not-found-text {
+    font-size: 0.925rem;
   }
 }

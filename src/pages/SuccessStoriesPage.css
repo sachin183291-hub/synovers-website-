@@ -316,10 +316,18 @@
 }
 
 @media (max-width: 768px) {
+  .stories-hero { padding: var(--space-16) 0 var(--space-8); }
+  .stories-hero-sub { max-width: 100%; }
   .stories-filters-bar {
     flex-direction: column;
   }
   .stories-filter-select-wrap {
     width: 100%;
   }
+  .stories-cta-actions { flex-direction: column; align-items: center; }
+  .stories-cta-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .stories-hero { padding: var(--space-12) 0 var(--space-6); }
 }

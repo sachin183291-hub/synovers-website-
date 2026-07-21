@@ -384,6 +384,13 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hire-hero { padding: var(--space-16) 0 var(--space-10); }
+  .hire-hero-content { text-align: left; }
+  .hire-hero-actions { flex-direction: column; }
+  .hire-hero-actions .btn { width: 100%; justify-content: center; }
+}
+
 @media (max-width: 580px) {
   .hire-process {
     grid-template-columns: 1fr;
@@ -391,4 +398,9 @@
   .hiring-grid {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+@media (max-width: 480px) {
+  .hire-hero { padding: var(--space-12) 0 var(--space-8); }
+  .hiring-grid { grid-template-columns: 1fr; }
 }

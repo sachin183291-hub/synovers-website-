@@ -297,10 +297,19 @@ a.contact-info-line:hover { color: var(--color-primary); }
 }
 
 @media (max-width: 768px) {
+  .contact-hero { padding: 80px 0 40px; }
   .contact-info-grid { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr; }
+  .contact-submit-btn { width: 100%; }
 }
 
 @media (max-width: 480px) {
+  .contact-hero { padding: 72px 0 32px; }
   .contact-info-grid { grid-template-columns: 1fr; }
+  .contact-info-card { padding: var(--space-4); }
+}
+
+@media (max-width: 360px) {
+  .contact-hero { padding: 64px 0 24px; }
+  .contact-hero-title { font-size: 1.75rem; }
 }
