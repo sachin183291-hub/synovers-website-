@@ -77,17 +77,21 @@ export default function ContactPage() {
 
     setLoading(true)
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch("https://formsubmit.co/ajax/synovers1@gmail.com", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Accept": "application/json"
         },
         body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          course: form.course,
-          message: form.message
+          _subject: `New Contact Request from ${form.name}`,
+          _captcha: "false",
+          _template: "table",
+          Name: form.name,
+          Email: form.email,
+          Phone: form.phone,
+          Course: form.course,
+          Message: form.message
         })
       })
       

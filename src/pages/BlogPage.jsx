@@ -135,13 +135,16 @@ export default function BlogPage() {
               e.preventDefault();
               const email = e.target.elements.email.value;
               try {
-                const response = await fetch("http://localhost:5000/api/newsletter", {
+                const response = await fetch("https://formsubmit.co/ajax/synovers1@gmail.com", {
                   method: "POST",
                   headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
                   },
                   body: JSON.stringify({
-                    email: email
+                    _subject: "New Newsletter Subscriber",
+                    _captcha: "false",
+                    Email: email
                   })
                 });
                 if (response.ok) {
