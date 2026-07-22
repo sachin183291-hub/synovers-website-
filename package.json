@@ -8,6 +8,7 @@
     "dev:backend": "node backend/server.js",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
     "build": "vite build",
+    "vercel-build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
