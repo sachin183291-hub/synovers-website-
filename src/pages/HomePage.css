@@ -559,9 +559,9 @@
   .final-cta-actions .btn { width: 100%; max-width: 320px; }
   .leadership-grid { grid-template-columns: 1fr; max-width: 100%; }
   .leader-card-premium { min-height: auto; }
-  .leader-img-wrap { height: 280px !important; }
+  .leader-img-wrap { height: auto !important; aspect-ratio: 5 / 4; }
   .leader-card-founder .leader-img-wrap,
-  .leader-card-ceo .leader-img-wrap { height: 380px !important; }
+  .leader-card-ceo .leader-img-wrap { height: auto !important; aspect-ratio: 5 / 4; }
   .leader-img { object-position: center top; }
   .leader-content { padding: 20px 18px; }
   .blog-section .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
@@ -775,7 +775,7 @@
 
 @media (max-width: 768px) {
   .leadership-grid { grid-template-columns: 1fr; }
-  .leader-img-wrap { height: 280px !important; }
+  .leader-img-wrap { height: auto !important; aspect-ratio: 5 / 4; }
   .leader-content { padding: 20px 18px; }
 }
 

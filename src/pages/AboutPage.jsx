@@ -159,23 +159,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Hiring Partners */}
-      <section className="section">
-        <div className="container">
-          <div className="text-center" style={{ marginBottom: 'var(--space-12)' }}>
-            <span className="section-label">Placement Network</span>
-            <h2 className="section-title">5+ <span className="text-gradient">Hiring Partners</span></h2>
-          </div>
-          <div className="hiring-grid">
-            {HIRING_PARTNERS.map(p => (
-              <div key={p} className="hiring-logo-card card">
-                <Globe size={16} style={{ color: 'var(--color-text-muted)' }} />
-                <span>{p}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="about-cta">

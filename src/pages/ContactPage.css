@@ -165,18 +165,19 @@ a.contact-info-line:hover { color: var(--color-primary); }
 
 .contact-office h3 { font-weight: 700; }
 
-.office-map-placeholder {
-  height: 120px;
+.office-map {
+  height: 200px;
   background: var(--color-surface-2);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.office-map iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .office-details p {

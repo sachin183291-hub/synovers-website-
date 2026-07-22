@@ -131,8 +131,30 @@ export default function BlogPage() {
           <div className="newsletter-card card">
             <h2 className="newsletter-title">Subscribe to our Newsletter</h2>
             <p className="newsletter-sub">Get weekly career roadmaps, tech alerts, and placement opportunity updates directly in your inbox.</p>
-            <form className="newsletter-form" onSubmit={e => { e.preventDefault(); toast.success('Subscribed successfully!') }}>
-              <input type="email" placeholder="Your work/personal email" className="input-field" required />
+            <form className="newsletter-form" onSubmit={async e => {
+              e.preventDefault();
+              const email = e.target.elements.email.value;
+              try {
+                const response = await fetch("http://localhost:5000/api/newsletter", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json"
+                  },
+                  body: JSON.stringify({
+                    email: email
+                  })
+                });
+                if (response.ok) {
+                  toast.success('Subscribed successfully!');
+                  e.target.reset();
+                } else {
+                  toast.error('Failed to subscribe. Please try again.');
+                }
+              } catch (error) {
+                toast.error('Something went wrong.');
+              }
+            }}>
+              <input type="email" name="email" placeholder="Your work/personal email" className="input-field" required />
               <button type="submit" className="btn btn-primary">Subscribe</button>
             </form>
           </div>

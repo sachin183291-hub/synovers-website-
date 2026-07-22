@@ -57,7 +57,8 @@ export default function Footer() {
                       </svg>
                     ),
                     href: '#',
-                    label: 'Twitter'
+                    label: 'Twitter',
+                    brandClass: 'twitter'
                   },
                   {
                     icon: (
@@ -68,7 +69,8 @@ export default function Footer() {
                       </svg>
                     ),
                     href: 'https://www.linkedin.com/company/synovers/',
-                    label: 'LinkedIn'
+                    label: 'LinkedIn',
+                    brandClass: 'linkedin'
                   },
                   {
                     icon: (
@@ -77,8 +79,9 @@ export default function Footer() {
                         <path d="m10 15 5-3-5-3z"/>
                       </svg>
                     ),
-                    href: '#',
-                    label: 'YouTube'
+                    href: 'https://youtube.com/@synoverstechnologies?si=LGqzuLTW4U3bbGr3',
+                    label: 'YouTube',
+                    brandClass: 'youtube'
                   },
                   {
                     icon: (
@@ -89,10 +92,11 @@ export default function Footer() {
                       </svg>
                     ),
                     href: 'https://www.instagram.com/synovers_?igsh=MXM0NGV0YjNiajliMA==',
-                    label: 'Instagram'
+                    label: 'Instagram',
+                    brandClass: 'instagram'
                   },
                 ].map(s => (
-                  <a key={s.label} href={s.href} className="social-btn" aria-label={s.label}>{s.icon}</a>
+                  <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className={`social-btn ${s.brandClass}`} aria-label={s.label}>{s.icon}</a>
                 ))}
               </div>
               <div className="footer-badges">

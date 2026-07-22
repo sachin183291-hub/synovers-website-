@@ -65,7 +65,7 @@ export default function ContactPage() {
     return newErrors
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
     const newErrors = validateForm()
 
@@ -76,11 +76,34 @@ export default function ContactPage() {
     }
 
     setLoading(true)
-    setTimeout(() => {
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          course: form.course,
+          message: form.message
+        })
+      })
+      
+      const result = await response.json()
+      
+      if (response.ok) {
+        setSubmitted(true)
+        toast.success("Message sent! We'll call you within 24 hours.")
+      } else {
+        toast.error(result.message || 'Failed to send message. Please try again.')
+      }
+    } catch (error) {
+      toast.error('Something went wrong. Please check your connection.')
+    } finally {
       setLoading(false)
-      setSubmitted(true)
-      toast.success('Message sent! We\'ll call you within 24 hours.')
-    }, 1200)
+    }
   }
 
   return (
@@ -243,9 +266,17 @@ export default function ContactPage() {
 
               <div className="contact-office card">
                 <h3>Our Office</h3>
-                <div className="office-map-placeholder">
-                  <MapPin size={32} style={{ color: 'var(--color-primary)' }} />
-                  <span>Coimbatore, Tamil Nadu</span>
+                <div className="office-map">
+                  <iframe
+                    title="Synovers Technologies Office Location"
+                    src="https://maps.google.com/maps?q=Kalingarayan%20St,%20Ram%20Nagar,%20Gandhipuram,%20Coimbatore,%20Tamil%20Nadu%20641009&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
                 <div className="office-details">
                   <p>Kalingarayan St, Ram Nagar</p>
