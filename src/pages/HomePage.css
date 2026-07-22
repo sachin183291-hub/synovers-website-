@@ -559,10 +559,10 @@
   .final-cta-actions .btn { width: 100%; max-width: 320px; }
   .leadership-grid { grid-template-columns: 1fr; max-width: 100%; }
   .leader-card-premium { min-height: auto; }
-  .leader-img-wrap { height: auto !important; aspect-ratio: 4 / 3; }
+  .leader-img-wrap { height: 340px !important; aspect-ratio: auto; }
   .leader-card-founder .leader-img-wrap,
-  .leader-card-ceo .leader-img-wrap { height: auto !important; aspect-ratio: 4 / 3; }
-  .leader-img { object-position: center 10%; }
+  .leader-card-ceo .leader-img-wrap { height: 380px !important; aspect-ratio: auto; }
+  .leader-img { object-position: center top; }
   .leader-content { padding: 20px 18px; flex: none; }
   .leader-quote-box { margin-top: 12px; }
   .blog-section .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
@@ -776,7 +776,7 @@
 
 @media (max-width: 768px) {
   .leadership-grid { grid-template-columns: 1fr; }
-  .leader-img-wrap { height: auto !important; aspect-ratio: 4 / 3; }
+  .leader-img-wrap { height: 380px !important; aspect-ratio: auto; }
   .leader-content { padding: 20px 18px; flex: none; }
   .leader-quote-box { margin-top: 12px; }
 }
