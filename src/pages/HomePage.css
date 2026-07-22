@@ -563,7 +563,8 @@
   .leader-card-founder .leader-img-wrap,
   .leader-card-ceo .leader-img-wrap { height: auto !important; aspect-ratio: 5 / 4; }
   .leader-img { object-position: center top; }
-  .leader-content { padding: 20px 18px; }
+  .leader-content { padding: 20px 18px; flex: none; }
+  .leader-quote-box { margin-top: 12px; }
   .blog-section .section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   .partners-track { gap: 24px; }
 }
@@ -776,7 +777,8 @@
 @media (max-width: 768px) {
   .leadership-grid { grid-template-columns: 1fr; }
   .leader-img-wrap { height: auto !important; aspect-ratio: 5 / 4; }
-  .leader-content { padding: 20px 18px; }
+  .leader-content { padding: 20px 18px; flex: none; }
+  .leader-quote-box { margin-top: 12px; }
 }
 
 /* Ensure anchor wrappers inside image containers fill the wrapper so images size correctly */
