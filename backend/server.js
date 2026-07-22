@@ -4,25 +4,31 @@ import sqlite3 from 'sqlite3';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Because we are using type: "module" in package.json
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
-app.use(cors());
+// Allow requests from anywhere (frontend on different domain when deployed)
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
 app.use(express.json());
 
-// Initialize SQLite database
-const dbPath = path.resolve(__dirname, 'database.sqlite');
+// Use /data directory if available (for persistent disks on Render),
+// otherwise fall back to the local __dirname
+const dataDir = process.env.DATA_DIR || __dirname;
+const dbPath = path.resolve(dataDir, 'database.sqlite');
+
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error('Error opening database', err);
   } else {
-    console.log('Connected to SQLite database.');
+    console.log('Connected to SQLite database at:', dbPath);
     db.serialize(() => {
-      // Create contacts table
       db.run(`
         CREATE TABLE IF NOT EXISTS contacts (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -35,7 +41,6 @@ const db = new sqlite3.Database(dbPath, (err) => {
         )
       `);
 
-      // Create newsletter table
       db.run(`
         CREATE TABLE IF NOT EXISTS newsletter_subscribers (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,10 +52,15 @@ const db = new sqlite3.Database(dbPath, (err) => {
   }
 });
 
+// Health check endpoint (required by many cloud platforms)
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
 // Contact API Endpoint
 app.post('/api/contact', (req, res) => {
   const { name, email, phone, course, message } = req.body;
-  
+
   if (!name || !email || !phone) {
     return res.status(400).json({ success: false, message: 'Missing required fields' });
   }
@@ -76,7 +86,6 @@ app.post('/api/newsletter', (req, res) => {
   const query = `INSERT INTO newsletter_subscribers (email) VALUES (?)`;
   db.run(query, [email], function(err) {
     if (err) {
-      // Handle unique constraint error if they already subscribed
       if (err.message.includes('UNIQUE constraint failed')) {
         return res.status(400).json({ success: false, message: 'Email is already subscribed' });
       }
@@ -88,5 +97,5 @@ app.post('/api/newsletter', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Backend server is running at http://localhost:${port}`);
+  console.log(`Backend server is running on port ${port}`);
 });
